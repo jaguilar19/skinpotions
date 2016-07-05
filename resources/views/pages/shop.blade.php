@@ -184,7 +184,7 @@
                     </div>
                     <div class="tab-pane fade" id="cat4">
                         <h4>Service Four</h4>
-                        <p>No Stocks Available.</p>
+                        <p>No Available Stocks.</p>
                     </div>
                 </div>      
                 </div>
