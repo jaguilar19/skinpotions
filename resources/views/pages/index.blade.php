@@ -28,7 +28,7 @@
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-                                     <span class="btn btn-dark btn-lg">SHOP NOW!!</span>
+                                     <span class="btn btn-dark btn-lg">Category 1</span>
                                 </a>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-                                     <span class="btn btn-dark btn-lg">SHOP NOW!!</span>
+                                     <span class="btn btn-dark btn-lg">Category 2</span>
                                 </a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
-                                    <span class="btn btn-dark btn-lg">SHOP NOW!!</span>
+                                    <span class="btn btn-dark btn-lg">Category 3</span>
                                 </a>       
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
-                                    <span class="btn btn-dark btn-lg">SHOP NOW!!</span>
+                                    <span class="btn btn-dark btn-lg">Category 4</span>
                                 </a>
                             </div>
                         </div>
@@ -69,3 +69,4 @@
         <!-- /.container -->
     </section>
 @endsection
+

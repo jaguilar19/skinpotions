@@ -38,23 +38,24 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top" onclick=$ ( "#menu-close").click();>Skin Potions</a>
+                <a href="#top" onclick=$ ( "#menu-close").click(); style="color:#ff0099;">Skin Potions</a>
             </li>
             <li>
-                <a href="#top" onclick=$ ( "#menu-close").click();>Home</a>
+                <a href="#top" onclick=$ ( "#menu-close").click(); style="color:#ff0099;">Home</a>
             </li>
             <li>
-                <a href="#about" onclick=$ ( "#menu-close").click();>About</a>
+                <a href="#about" onclick=$ ( "#menu-close").click(); style="color:#ff0099;">About</a>
             </li>
             <li>
-                <a href="#services" onclick=$ ( "#menu-close").click();>Our Products</a>
+                <a href="#services" onclick=$ ( "#menu-close").click(); style="color:#ff0099;">Our Products</a>
             </li>
         </ul>
     </nav>
-      @include('layout.header')
+
+        @include('layout.header')
             
-                @yield('content')
-           
+            @yield('content')
+       
             @yield('scripts')
         
         @include('layout.footer')
