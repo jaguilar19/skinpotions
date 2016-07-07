@@ -13,13 +13,13 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            <img class="slide-image" src="img/sale1.png" alt="">
                         </div>
                         <div class="item">
-                            <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            <img class="slide-image" src="img/sale2.png" alt="">
                         </div>
                         <div class="item">
-                            <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            <img class="slide-image" src="img/sale3.png" alt="">
                         </div>
                     </div>
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -33,23 +33,21 @@
         </div><!--carousel-->
 
         <div class="row">
-            <ul id="myTab" class="nav nav-tabs nav-justified">
-                <div class="col-md-3">
-                    <div class="list-group">
-                        <li class="active"><a href="#cat1" class="list-group-item" data-toggle="tab">Category 1</a></li>
-                        <li class=""><a href="#cat2" class="list-group-item" data-toggle="tab">Category 2</a></li>
-                        <li class=""><a href="#cat3" class="list-group-item" data-toggle="tab">Category 3</a></li>
-                        <li class=""><a href="#cat4" class="list-group-item" data-toggle="tab">Category 4</a></li>
-                    </div>
-                </div>
-            </ul> 
-           
             <div class="col-md-9">
                 <div class="row">
-                    <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade active in" id="cat1">
-                        <h4>Service One</h4>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
+                   <div class="container">
+                      <h2>Our Products</h2>
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#cat1">Category 1</a></li>
+                        <li><a data-toggle="tab" href="#cat2">Category 2</a></li>
+                        <li><a data-toggle="tab" href="#cat3">Category 3</a></li>
+                        <li><a data-toggle="tab" href="#cat4">Category 4</a></li>
+                      </ul>
+
+                      <div class="tab-content">
+                        <div id="cat1" class="tab-pane fade in active">
+                          <h3>Category 1</h3>
+                          <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
                                 <div class="caption">
@@ -91,102 +89,103 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        <div id="cat2" class="tab-pane fade">
+                          <h3>Category 2</h3>
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/320x150" alt="">
+                                    <div class="caption">
+                                        <h4 class="pull-right">$24.99</h4>
+                                        <h4><a href="#">First Product</a>
+                                        </h4>
+                                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                    </div>
+                                    <div class="ratings">
+                                        <p class="pull-right">15 reviews</p>
+                                        <p>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cat3" class="tab-pane fade">
+                          <h3>Category 3</h3>
+                          <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x150" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$24.99</h4>
+                                    <h4><a href="#">First Product</a>
+                                    </h4>
+                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x150" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$24.99</h4>
+                                    <h4><a href="#">First Product</a>
+                                    </h4>
+                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x150" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$24.99</h4>
+                                    <h4><a href="#">First Product</a>
+                                    </h4>
+                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div id="cat4" class="tab-pane fade">
+                          <h3>Category 4</h3>
+                          <p>No Available Stocks.</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="tab-pane fade" id="cat2">
-                        <h4>Service Two</h4>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="#">First Product</a>
-                                    </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="cat3">
-                        <h4>Service Three</h4>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="#">First Product</a>
-                                    </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="#">First Product</a>
-                                    </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="#">First Product</a>
-                                    </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="cat4">
-                        <h4>Service Four</h4>
-                        <p>No Available Stocks.</p>
-                    </div>
-                </div>      
                 </div>
             </div>
 
