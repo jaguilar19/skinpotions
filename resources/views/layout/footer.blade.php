@@ -1,15 +1,16 @@
 <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4 style="color:#ff6699;"><strong>Skin Potions</strong>
                     </h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
+                    <p style="color:#ff6699;">SM Bacoor (UGF fronting Chowking)
+                        <br>SM North (2F Main Mall fronting Max's)
+                        <br>SM Megamall (LGF Mega A fronting Motoworld)</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a style="color:#ff6699;" href="mailto:name@example.com">email@skinpotionsph.com</a>
                         </li>
                     </ul>
                     <br>
@@ -25,7 +26,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; www.skinpotionsph.com</p>
                 </div>
             </div>
         </div>
