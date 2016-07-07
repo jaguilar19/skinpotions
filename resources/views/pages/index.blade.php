@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a href="/shop#cat2">
                                     <img class="img-portfolio img-responsive" src="img/cat1.png">
                                      <span class="btn btn-dark btn-lg" style="font-family:Amber Shaie;">Category 1</span>
                                 </a>
