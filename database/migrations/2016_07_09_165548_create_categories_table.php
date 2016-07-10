@@ -14,6 +14,7 @@ class CreateCategoriesTable extends Migration
     {
         $this->createTableCategories();
         $this->createTableItems();
+        $this->createTableTransactions();
 
         $this->populateTableCategories();
         $this->populateTableItems();
@@ -28,7 +29,23 @@ class CreateCategoriesTable extends Migration
     {
         Schema::drop('skpt_categories');
         Schema::drop('skpt_items');
+        Schema::drop('skpt_transactions');
     }
+
+    /**
+     *  Naming conventions:
+     *      Table: Noun in plural form.
+     *      Table columns: Noun in singular form.
+     * 
+     *  The naming of reference columns follows this format:
+     *  
+     *      [table name in singular form]_[column name]
+     *
+     *  For example, if table Items references the column `id` of 
+     *      table Categories, the column name in Items would be:
+     * 
+     *      category_id
+     */
 
     private function createTableCategories()
     {
@@ -80,15 +97,40 @@ class CreateCategoriesTable extends Migration
 
             $table->increments('id');
 
-            $table->string('code', 128);
-            $table->string('name', 128);
+            $table->string('code', 128)->unique();
+            $table->string('name', 128)->unique();
             $table->mediumText('description');
-            $table->decimal('unit_price', 6, 2)->default(0.0);
-            $table->integer('stock')->default(0);
+            $table->decimal('price', 6, 2)->default(0.0);
+            $table->integer('quantity')->unsigned()->default(0);
             $table->integer('category_id')->unsigned()->nullable();
 
             $table->timestamps();
         });
+    }
+
+    private function createTableTransactions()
+    {
+        if(Schema::exists('skpt_transactions')) {
+            Schema::drop('skpt_transactions');
+        }
+        else
+        {
+            Schema::create('skpt_transactions', function(Blueprint $table) {
+                $table->engine = 'MyISAM';
+
+                $table->increments('id');
+
+                $table->string('item_code', 128)->index();
+                $table->integer('quantity')->unsigned();
+                $table->decimal('unit_price', 6, 2)->index();
+                $table->decimal('order_total', 7, 2)->index();
+
+                $table->string('reference_id')->unique();
+                $table->enum('status', ['PENDING', 'PROCESSING', 'PAID', 'CANCELLED', 'RETURNED']);
+
+                $table->timestamps();
+            });
+        }
     }
 
     private function populateTableCategories()
