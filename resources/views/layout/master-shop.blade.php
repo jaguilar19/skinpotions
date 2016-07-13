@@ -42,7 +42,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" style="color:#fff;">Skin Potions</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-cart">
+                    <span data-target="#myModal" data-toggle="modal" class="glyphicon"><img src="img/cart2.png" style="height:16px;width:16px;margin-top:-15px;"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="color:#fff;font-size:24px;font-family: GLAMOURGIRL;">Skin Potions</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,7 +54,17 @@
                         <a href="/" style="color:#fff;">Home</a>
                     </li>
                 </ul>
+                <div id="navbar-cart">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a data-target="#myModal" data-toggle="modal" class="btn" data-placement="bottom" title="Shopping Cart">
+                            <label style="color:#fff;">Cart</label> <span class="glyphicon"><img src="img/cart2.png" style="height:32px;width:32px;margin-top:-10px;"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
+            </div>
+             
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -62,7 +75,59 @@
         @yield('scripts')
     
     @include('layout.footer')
-    
+    <!--modal part-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: #333;">Items purchased</h4>
+                        <div align="right">Total Amount: &#x20B1; <span id="totalAmtPurchase" style="font-weight: bold;color: #333;">0.00</span></div>
+                    
+                        <div class="modal-body">
+                            <div class="table-responsive">          
+                                <table class="table" style="color: #333;">
+                                    <thead>
+                                        <tr>
+                                            <th>Quantity</th>
+                                            <th>Items Name</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                        <tbody id="renderPurchased">
+                                        <tr>
+                                        <td style="width: 130px;">
+                                        <div class="input-group" style="width: 125px;">
+                                        <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                        </span>
+                                        <input disabled type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
+                                        <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                        </span>
+                                        </div>
+                                        </td>
+                                        <td>Make-up</td>
+                                        <td>99.75</td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <div align="right">
+                                <button type="button" class="btn btn-success">Submit order</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
      <!-- jQuery -->

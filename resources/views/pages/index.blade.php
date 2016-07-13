@@ -1,6 +1,7 @@
 @extends('layout.master')
 @section('title', 'Skin Potions')
 @section('content')
+
 <!-- About -->
     <section id="about" class="about">
         <div class="container">
@@ -26,7 +27,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="/shop#cat2">
+                                <a href="/shop">
                                     <img class="img-portfolio img-responsive" src="img/cat1.png">
                                      <span class="btn btn-dark btn-lg" style="font-family:Amber Shaie;">Category 1</span>
                                 </a>

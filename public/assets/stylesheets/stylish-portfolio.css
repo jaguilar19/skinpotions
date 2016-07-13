@@ -264,6 +264,8 @@ footer {
   right: 5px;
 }
 
+
+
 /**logo overlay**/
 .overlay {
    /** background: url(/img/logo.png) top center no-repeat;**/
@@ -304,6 +306,8 @@ footer {
 }
 /**logo overlay**/
 
+
+
 /**fonts title**/
 @font-face {
     font-family: "GLAMOURGIRL";
@@ -319,7 +323,7 @@ footer {
     font-family: "The Heart Maze Demo";
     src: url(/fonts/The Heart Maze Demo.ttf) format("truetype");
 }
-SimplyGlamorous
+
 @font-face {
     font-family: "SimplyGlamorous";
     src: url(/fonts/SimplyGlamorous.ttf) format("truetype");

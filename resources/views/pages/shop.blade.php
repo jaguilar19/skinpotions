@@ -1,6 +1,7 @@
 @extends('layout.master-shop')
 @section('title', 'Skin Potions | Shop')
 @section('content')
+
 <!-- Page Content -->
     <div class="container">
         <div class="row carousel-holder">
