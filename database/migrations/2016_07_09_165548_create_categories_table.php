@@ -110,7 +110,7 @@ class CreateCategoriesTable extends Migration
 
     private function createTableTransactions()
     {
-        if(Schema::exists('skpt_transactions')) {
+        if(Schema::hasTable('skpt_transactions')) {
             Schema::drop('skpt_transactions');
         }
         else
