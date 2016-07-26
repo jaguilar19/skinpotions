@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateAppTables extends Migration
 {
     const MyISAM = 'MyISAM';
     const TABLE_PREFIX = 'skpt_';
@@ -22,6 +22,8 @@ class CreateCategoriesTable extends Migration
         $this->createTableCategories();
         $this->createTableItems();
         $this->createTableTransactions();
+        $this->createTableProductRatings();
+        $this->createTableItemReviews();
 
     }
 
@@ -69,25 +71,18 @@ class CreateCategoriesTable extends Migration
          */
         $table_name = self::TABLE_PREFIX . 'categories';
 
-        if(Schema::hasTable($table_name))
-        {
-            Schema::drop($table_name);
-        }
-        else
-        {
-            Schema::create($table_name, function (Blueprint $table) {
+        Schema::create($table_name, function (Blueprint $table) {
 
-                $table->engine = self::MyISAM;
+            $table->engine = self::MyISAM;
 
-                $table->increments('id');
-                
-                $table->string('category_name', 128)->unique();
-                $table->mediumText('description');
+            $table->increments('id');
+            
+            $table->string('category_name', 128)->unique();
+            $table->mediumText('description');
 
-                // Creates created_at and updated_at
-                $table->timestamps();
-            });
-        }
+            // Creates created_at and updated_at
+            $table->timestamps();
+        });
     }
 
     private function createTableItems()
@@ -108,113 +103,85 @@ class CreateCategoriesTable extends Migration
          */
         $table_name = self::TABLE_PREFIX . 'items';
 
-        if(Schema::hasTable($table_name))
-        {
-            Schema::drop($table_name);
-        }
-        else
-        {
-            Schema::create($table_name, function (Blueprint $table) {
+        Schema::create($table_name, function (Blueprint $table) {
 
-                $table->engine = self::MyISAM;
+            $table->engine = self::MyISAM;
 
-                $table->increments('id');
+            $table->increments('id');
 
-                $table->string('code', 128)->unique();
-                $table->string('name', 128)->unique();
-                $table->mediumText('description')->nullable();
-                $table->decimal('price', 6, 2)->default(0.0);
-                $table->integer('quantity')->unsigned()->default(0);
-                $table->integer('category_id')->unsigned()->nullable();
+            $table->string('code', 128)->unique();
+            $table->string('name', 128)->unique();
+            $table->mediumText('description')->nullable();
+            $table->decimal('price', 6, 2)->default(0.0);
+            $table->integer('quantity')->unsigned()->default(0);
+            $table->integer('category_id')->unsigned()->nullable();
 
-                // This should refer to the filename part only
-                // We should device some sort of naming convention so we can 
-                // properly identify which image file belongs to which.
-                $table->string('img_file')->nullable();
+            // This should refer to the filename part only
+            // We should device some sort of naming convention so we can 
+            // properly identify which image file belongs to which.
+            $table->string('img_file')->nullable();
 
-                $table->timestamps();
-            });
-        }
+            $table->timestamps();
+        });
     }
 
     private function createTableTransactions()
     {
         $table_name = self::TABLE_PREFIX . 'transactions';
 
-        if(Schema::hasTable($table_name)) 
+        Schema::create($table_name, function(Blueprint $table) 
         {
-            Schema::drop($table_name);
-        }
-        else
-        {
-            Schema::create($table_name, function(Blueprint $table) 
-            {
-                $table->engine = self::MyISAM;
+            $table->engine = self::MyISAM;
 
-                $table->increments('id');
+            $table->increments('id');
 
-                $table->string('item_code', 128)->index();
-                $table->integer('quantity')->unsigned();
-                $table->decimal('unit_price', 6, 2)->index();
-                $table->decimal('order_total', 7, 2)->index();
+            $table->string('item_code', 128)->index();
+            $table->integer('quantity')->unsigned();
+            $table->decimal('unit_price', 6, 2)->index();
+            $table->decimal('order_total', 7, 2)->index();
 
 
-                $table->string('reference_id')->unique();
+            $table->string('reference_id')->unique();
 
-                // The set here is just a draft.
-                $table->enum('status', ['PENDING', 'PROCESSING', 'PAID', 'CANCELLED', 'RETURNED']);
+            // The set here is just a draft.
+            $table->enum('status', ['PENDING', 'PROCESSING', 'PAID', 'CANCELLED', 'RETURNED']);
 
-                $table->timestamps();
-            });
-        }
+            $table->timestamps();
+        });
     }
 
     private function createTableProductRatings()
     {
         $table_name = self::TABLE_PREFIX . 'product_ratings';
 
-        if(Schema::hasTable($table_name))
+        Schema::create($table_name, function(Blueprint $table)
         {
-            Schema::drop($table_name);
-        }
-        else
-        {
-            Schema::create($table_name, function(Blueprint $table)
-            {
-                $table->engine = self::MyISAM;
+            $table->engine = self::MyISAM;
 
-                $table->string('item_code', 128)->index();
-                $table->enum('rating', [1, 2, 3, 4, 5])->nullable();
-                $table->string('email')->index();
-                $table->timestamps();
+            $table->string('item_code', 128)->index();
+            $table->enum('rating', [1, 2, 3, 4, 5])->nullable();
+            $table->string('email')->index();
+            $table->timestamps();
 
-                $table->unique(['item_code', 'email']);
-            });
-        }
+            $table->unique(['item_code', 'email']);
+        });
     }
 
     private function createTableItemReviews()
     {
         $table_name = self::TABLE_PREFIX . 'product_reviews';
 
-        if(Schema::hasTable($table_name))
+        Schema::create($table_name, function(Blueprint $table)
         {
-            Schema::drop($table_name);
-        }
-        else
-        {
-            Schema::create($table_name, function(Blueprint $table)
-            {
-                $table->engine = self::MyISAM;
+            $table->engine = self::MyISAM;
 
-                $table->string('item_code', 128)->index();
-                $table->string('email')->index();
-                $table->text('review')->default('');
-                $table->timestamps();
+            $table->string('item_code', 128)->index();
+            $table->string('email')->index();
+            $table->text('review')->default('');
+            $table->timestamps();
 
-                $table->unique(['item_code', 'email']);
-            });
-        }
+            $table->unique(['item_code', 'email']);
+        });
     }
 
 } // End of class
