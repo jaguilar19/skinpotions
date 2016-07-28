@@ -7,7 +7,11 @@ class CreateCategoriesTable extends Migration
 {
     private function tableName()
     {
-        return env('DB_TABLE_PREFIX') . "_" . 'categories';
+        $prefix = env('DB_TABLE_PREFIX');
+
+        if($prefix) $prefix .= "_";
+
+        return $prefix . 'categories';
     }
 
     /**
