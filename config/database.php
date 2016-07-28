@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql_pot'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,6 +76,20 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
+        ],
+
+        'mysql_pot' => [
+            'driver' => env('DB_CONNECTION', 'mysql'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'skinpotions'),
+            'username' => env('DB_USERNAME', 'webapp'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => env('DB_TABLE_PREFIX', ''),
+            'strict' => false,
+            'engine' => null,
         ],
 
     ],
