@@ -14,6 +14,15 @@ class CreateReviewsTable extends Migration
         return $prefix . 'reviews';
     }
 
+    private function findAndDropTable()
+    {
+        if(Schema::hasTable($this->tableName()))
+        {
+            Schema::drop($this->tableName());
+        }
+
+    }
+
     /**
      * Run the migrations.
      *
@@ -21,9 +30,17 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
+        $this->findAndDropTable();
+
         Schema::create($this->tableName(), function (Blueprint $table) {
-            $table->increments('id');
+            $table->engine = 'MyISAM';
+
+            $table->string('item_code', 128)->index();
+            $table->string('email', 255)->unique();
+            $table->text('review')->default('');
+            $table->string('ipaddr', 64)->index();
             $table->timestamps();
+
         });
     }
 
