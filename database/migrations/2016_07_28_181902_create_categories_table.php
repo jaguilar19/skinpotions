@@ -42,7 +42,8 @@ class CreateCategoriesTable extends Migration
             $table->mediumText('description');
 
             // Creates created_at and updated_at
-            $table->timestamps();
+            $table->datetime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->datetime('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
